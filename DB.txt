@@ -1,0 +1,26 @@
+create database MedidoresInteligentes
+
+use MedidoresInteligentes
+
+Create table Medidores(
+IdMedidores int primary key,
+Nombre varchar(50) not null
+);
+
+Create table Lecturas(
+IdLectura int primary key,
+Fecha varchar(50) not null,
+Hora varchar(50),
+Minuto varchar(50),
+Cantidad int not null,
+IdMedidor int not null,
+CONSTRAINT fk_Medidor FOREIGN KEY (IdMedidor) REFERENCES Medidores (IdMedidor) 
+);
+
+Create table Usuarios(
+IdUsuario int primary key,
+Nombre varchar(50),
+rut varchar(50),
+contraseña varchar(50) ,
+correo varchar(40)
+);
